@@ -1,5 +1,6 @@
 # topology_of_attention_heads
 
+
 We focus on computing the distance between two attention heads to analyze the behavior of attention heads in deep learning models such as BERT and GPT-2. We define the distance metric between two heads $H_i$ and $H_j$ as follows:
 
 $$
@@ -16,7 +17,7 @@ With this modification, our distance metric now satisfies all the necessary prop
 
 The findings suggest that attention heads within the same layer exhibit similar attention distributions, forming distinct clusters. This observation is intriguing considering that [Multi-Head Attention with Disagreement Regularization](https://arxiv.org/abs/1810.10183) demonstrated that encouraging diverse attention head behavior can enhance Transformer performance in machine translation. One possible explanation for this redundancy in BERT's attention heads is the use of attention dropout during training. Consequently, we can infer that persistent topological features may negatively impact model performance, prompting the need to discourage such features during training. By promoting larger Jensen-Shannon distances between specific attention heads that form clusters or higher-dimensional topological features, we enable the model to increase pairwise distances $D(H_i, H_j)$ without dictating the distribution of individual attention weights of a single head, thereby retaining flexibility in the distribution of attention weights while enhancing overall performance.
 
-### Provind the distance metric properties
+### Proving the distance metric properties
 
 Now, that for an individual token, $\sqrt{ JS(H_i(\text{token}), H_j(\text{token}))}$ is a distance metric. If we want to prove that $D(H_i, H_j) = \sum_{\text{token} \in \text{input data}} \sqrt{ JS(H_i(\text{token}), H_j(\text{token}))}$ is a distance metric we technically need to show that the sum of two distance metrics is a distance metric since for two or more tokens we are summing two or more distance metrics. It suffices to show that the sum of two distance metrics is a distance metric. 
 
