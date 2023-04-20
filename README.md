@@ -19,7 +19,7 @@ The findings suggest that attention heads within the same layer exhibit similar 
 
 ### Proving the distance metric properties
 
-Now, that for an individual token, $\sqrt{ JS(H_i(\text{token}), H_j(\text{token}))}$ is a distance metric. If we want to prove that $D(H_i, H_j) = \sum_{\text{token} \in \text{input data}} \sqrt{ JS(H_i(\text{token}), H_j(\text{token}))}$ is a distance metric we technically need to show that the sum of two distance metrics is a distance metric since for two or more tokens we are summing two or more distance metrics. It suffices to show that the sum of two distance metrics is a distance metric. 
+Now, for an individual token, $\sqrt{ JS(H_i(\text{token}), H_j(\text{token}))}$ is a distance metric. If we want to prove that $D(H_i, H_j) = \sum_{\text{token} \in \text{input data}} \sqrt{ JS(H_i(\text{token}), H_j(\text{token}))}$ is a distance metric we technically need to show that the sum of two distance metrics is a distance metric since for two or more tokens we are summing two or more distance metrics. It suffices to show that the sum of two distance metrics is a distance metric. 
 
 To determine if the sum of two distance metrics is also a distance metric, let's review the properties that a function must satisfy in order to be considered a distance metric. A function $d(x, y)$ is a distance metric if it satisfies the following four conditions for all points $x$, $y$, and $z$:
 
